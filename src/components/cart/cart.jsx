@@ -1,13 +1,13 @@
-import { CartItem, CartToggle } from '../../components/cart';
+import { CartItem, CartToggle } from '../cart';
 import { Boundary, Modal } from '../../components/common';
 import { CHECKOUT_STEP_1 } from '../../constants/routes';
-import firebase from 'firebase/firebase';
 import { calculateTotal, displayMoney } from '../../helpers/utils';
 import { useDidMount, useModal } from '../../hooks';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import {useLocation, useNavigate} from 'react-router-dom';
+import {useLocation, useHistory} from 'react-router-dom';
 import { clearCart } from '../../redux/actions/cartActions';
+import firebase from "../../services/firebase";
 
 const Cart = () => {
   const { isOpenModal, onOpenModal, onCloseModal } = useModal();
@@ -15,7 +15,7 @@ const Cart = () => {
     cart: state.cart,
     user: state.auth
   }));
-  const history = useNavigate();
+  const history = useHistory();
   const { pathname } = useLocation();
   const dispatch = useDispatch();
   const didMount = useDidMount();
@@ -35,7 +35,7 @@ const Cart = () => {
   const onCheckOut = () => {
     if ((cart.length !== 0 && user)) {
       document.body.classList.remove('is-cart-open');
-      history(CHECKOUT_STEP_1);
+      history.push(CHECKOUT_STEP_1);
     } else {
       onOpenModal();
     }
@@ -44,7 +44,7 @@ const Cart = () => {
   const onSignInClick = () => {
     onCloseModal();
     document.body.classList.remove('cart-open');
-    history(CHECKOUT_STEP_1);
+    history.push(CHECKOUT_STEP_1);
   };
 
   const onClearCart = () => {

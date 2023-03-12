@@ -4,7 +4,7 @@ import PropType from 'prop-types';
 import React from 'react';
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 
-const ProductItem = ({ product, isItemOnBasket, addToBasket }) => {
+const ProductItem = ({ product, isItemOnCart, addToCart }) => {
 
   const onClickItem = () => {
     if (!product) return;
@@ -14,10 +14,10 @@ const ProductItem = ({ product, isItemOnBasket, addToBasket }) => {
     }
   };
 
-  const itemOnBasket = isItemOnBasket ? isItemOnBasket(product.id) : false;
+  const itemOnCart = isItemOnCart ? isItemOnCart(product.id) : false;
 
-  const handleAddToBasket = () => {
-    if (addToBasket) addToBasket({ ...product, selectedSize: product.sizes[0] });
+  const handleAddToCart = () => {
+    if (addToCart) addToCart({ ...product, selectedSize: product.sizes[0] });
   };
 
   return (
@@ -25,11 +25,11 @@ const ProductItem = ({ product, isItemOnBasket, addToBasket }) => {
       <div
         className={`product-card ${!product.id ? 'product-loading' : ''}`}
         style={{
-          border: product && itemOnBasket ? '1px solid #a6a5a5' : '',
-          boxShadow: product && itemOnBasket ? '0 10px 15px rgba(0, 0, 0, .07)' : 'none'
+          border: product && itemOnCart ? '1px solid #a6a5a5' : '',
+          boxShadow: product && itemOnCart ? '0 10px 15px rgba(0, 0, 0, .07)' : 'none'
         }}
       >
-        {itemOnBasket && <CheckOutlined className="fa fa-check product-card-check" />}
+        {itemOnCart && <CheckOutlined className="fa fa-check product-card-check" />}
         <div
           className="product-card-content"
           onClick={onClickItem}
@@ -58,11 +58,11 @@ const ProductItem = ({ product, isItemOnBasket, addToBasket }) => {
         </div>
         {product.id && (
           <button
-            className={`product-card-button button-small button button-block ${itemOnBasket ? 'button-border button-border-gray' : ''}`}
-            onClick={handleAddToBasket}
+            className={`product-card-button button-small button button-block ${itemOnCart ? 'button-border button-border-gray' : ''}`}
+            onClick={handleAddToCart}
             type="button"
           >
-            {itemOnBasket ? 'Remove from basket' : 'Add to basket'}
+            {itemOnCart ? 'Remove from cart' : 'Add to cart'}
           </button>
         )}
 
@@ -72,14 +72,14 @@ const ProductItem = ({ product, isItemOnBasket, addToBasket }) => {
 };
 
 ProductItem.defaultProps = {
-  isItemOnBasket: undefined,
-  addToBasket: undefined
+  isItemOnCart: undefined,
+  addToCart: undefined
 };
 
 ProductItem.propTypes = {
   product: PropType.object.isRequired,
-  isItemOnBasket: PropType.func,
-  addToBasket: PropType.func
+  isItemOnCart: PropType.func,
+  addToCart: PropType.func
 };
 
 export default ProductItem;

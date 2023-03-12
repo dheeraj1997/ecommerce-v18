@@ -1,27 +1,24 @@
 import PropType from 'prop-types';
 import React from 'react';
 import ProductItem from './ProductItem';
+import {useCart} from "../../hooks";
 
 const ProductGrid = ({ products }) => {
 
-  const isItemOnBasket = () => true;
-  const addToBasket = (product) => {
-    console.log("Adding to basket", product);
-  };
+  const {addToCart, isItemOnCart} = useCart();
 
   return (
     <div className="product-grid">
       {products.length === 0 ? new Array(12).fill({}).map((product, index) => (
         <ProductItem
-          // eslint-disable-next-line react/no-array-index-key
           key={`product-skeleton ${index}`}
           product={product}
         />
       )) : products.map((product) => (
         <ProductItem
           key={product.id}
-          isItemOnBasket={isItemOnBasket}
-          addToBasket={addToBasket}
+          isItemOnCart={isItemOnCart}
+          addToCart={addToCart}
           product={product}
         />
       ))}

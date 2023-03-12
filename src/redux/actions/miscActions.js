@@ -1,5 +1,6 @@
 import {
-  LOADING
+  IS_AUTHENTICATING,
+  LOADING, SET_AUTH_STATUS, SET_REQUEST_STATUS
 } from '../../constants/actions';
 
 export const setLoading = (bool = true) => ({
@@ -9,5 +10,16 @@ export const setLoading = (bool = true) => ({
 
 export const setRequestStatus = (status) => ({
   type: SET_REQUEST_STATUS,
+  payload: status
+});
+
+export const setAuthenticating = (bool = true) => ({
+  type: IS_AUTHENTICATING,
+  payload: bool
+});
+
+
+export const setAuthStatus = (status = null) => ({
+  type: SET_AUTH_STATUS,
   payload: status
 });

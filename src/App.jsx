@@ -1,5 +1,4 @@
-import './App.css';
-import React, { StrictMode } from 'react';
+import React, {StrictMode} from 'react';
 import {Provider} from "react-redux";
 import PropType from 'prop-types';
 import {AppRouter} from "./routers/AppRouter";
@@ -7,7 +6,7 @@ import {AppRouter} from "./routers/AppRouter";
 const App = ({store}) => (
   <StrictMode>
     <Provider store={store}>
-      <AppRouter />
+      <AppRouter/>
     </Provider>
   </StrictMode>
 )

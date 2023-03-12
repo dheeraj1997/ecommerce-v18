@@ -8,8 +8,8 @@ import {
 import UserAvatar from '../../containers/Account/components/UserAvatar';
 import CartToggle from '../cart/CartToggle';
 import Badge from './Badge';
-// import MobileNavigation from './MobileNavigation';
-// import SearchBar from './SearchBar';
+import logo from '../../../static/cart.png'
+import SearchBar from "./SearchBar";
 
 const Navigation = () => {
   const navbar = useRef(null);
@@ -54,24 +54,16 @@ const Navigation = () => {
   if (store.user && store.user.role === 'ADMIN') {
     return null;
   }
-  // if (window.screen.width <= 800) {
-  //   return (
-  //     <MobileNavigation
-  //       // eslint-disable-next-line react/jsx-props-no-spreading
-  //       {...store}
-  //       disabledPaths={cartDisabledPathNames}
-  //       pathname={pathname}
-  //     />
-  //   );
-  // }
+
   return (
     <nav className="navigation" ref={navbar}>
       <div className="logo">
-        {/*<Link onClick={onClickLink} to="/"><img alt="Logo" src={logo} /></Link>*/}
+        <Link onClick={onClickLink} to="/"><img alt="Logo" src={logo} /></Link>
       </div>
       <ul className="navigation-menu-main">
         <li><NavLink activeClassName="navigation-menu-active" exact to={ROUTE.HOME}>Home</NavLink></li>
       </ul>
+      <SearchBar />
       <ul className="navigation-menu">
         <li className="navigation-menu-item">
           <CartToggle>
@@ -82,7 +74,6 @@ const Navigation = () => {
                 onClick={onClickToggle}
                 type="button"
               >
-
                 <Badge count={store.cartLength}>
                   <ShoppingOutlined style={{ fontSize: '2.4rem' }} />
                 </Badge>
