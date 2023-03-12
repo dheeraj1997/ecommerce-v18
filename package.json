@@ -1,17 +1,26 @@
 {
   "name": "ecom-assignment",
   "version": "0.1.0",
+  "author": "Dheeraj Varshney",
   "private": true,
   "engines": {
     "node": "14.21.3"
   },
   "engineStrict": true,
   "dependencies": {
+    "@ant-design/icons": "^5.0.1",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "ant-design": "^1.0.0",
+    "history": "^5.3.0",
+    "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-loading-skeleton": "^3.2.0",
+    "react-redux": "^8.0.5",
+    "react-router-dom": "^6.9.0",
+    "redux": "^4.2.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
