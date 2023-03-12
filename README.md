@@ -12,13 +12,13 @@ Create an `.env` file and add the following variables.
 ```
 // SAMPLE CONFIG .env, you should put the actual config details found on your project settings
 
-VITE_FIREBASE_API_KEY=AIzaKJgkjhSdfSgkjhdkKJdkjowf
+VITE_FIREBASE_API_KEY=AIzaSyDxX8ztCRmT6lkFKpNmJWfa1LHptLjR6KM
 VITE_FIREBASE_AUTH_DOMAIN=yourauthdomin.firebaseapp.com
-VITE_FIREBASE_DB_URL=https://yourdburl.firebaseio.com
+VITE_FIREBASE_DB_URL=https://yourdburl.firebasedatabase.app
 VITE_FIREBASE_PROJECT_ID=yourproject-id
 VITE_FIREBASE_STORAGE_BUCKET=yourstoragebucket.appspot.com
-VITE_FIREBASE_MSG_SENDER_ID=43597918523958
-VITE_FIREBASE_APP_ID=234598789798798fg3-034
+VITE_FIREBASE_MSG_SENDER_ID=633972212347
+VITE_FIREBASE_APP_ID=1:633972212347:web:2327108db57c8cb24c98de
 
 ``` 
 
