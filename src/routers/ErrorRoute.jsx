@@ -1,6 +1,6 @@
 import {useLocation} from "react-router-dom";
 
-export default function ErrorPage() {
+export default function ErrorRoute() {
   const location = useLocation()
   console.error("error at", location);
 

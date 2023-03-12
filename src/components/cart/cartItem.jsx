@@ -55,7 +55,7 @@ const CartItem = ({ product }) => {
           </div>
         </div>
         <div className="cart-item-price">
-          <h4 className="my-0">{displayMoney(product.price * product.quantity)}</h4>
+          <h4 className="my-0">{displayMoney(parseFloat(product.price) * product.quantity)}</h4>
         </div>
         <button
           className="cart-item-remove button button-border button-border-gray button-small"
@@ -74,7 +74,7 @@ CartItem.propTypes = {
     id: PropType.string,
     name: PropType.string,
     brand: PropType.string,
-    price: PropType.number,
+    price: PropType.string,
     quantity: PropType.number,
     maxQuantity: PropType.number,
     description: PropType.string,

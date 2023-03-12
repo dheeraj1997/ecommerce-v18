@@ -46,7 +46,7 @@ CartItemControl.propTypes = {
     id: PropType.string,
     name: PropType.string,
     brand: PropType.string,
-    price: PropType.number,
+    price: PropType.string,
     quantity: PropType.number,
     maxQuantity: PropType.number,
     description: PropType.string,

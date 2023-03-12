@@ -52,7 +52,7 @@ const Navigation = () => {
   ];
 
   if (store.user && store.user.role === 'ADMIN') {
-    return null;
+    // return null; TODO :: ADD ADMIN ROUTES
   }
 
   return (
