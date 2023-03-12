@@ -1,22 +1,16 @@
 import * as Actions from "../../constants/actions"
 
-export const AuthActions = {
-  signIn: (email, password) => ({
-    type: Actions.SIGNIN,
-    payload: {
-      email,
-      password
-    }
-  }),
-  signInSuccess: (auth) => ({
-    type: Actions.SIGNIN_SUCCESS,
-    payload: auth
-  }),
-  signUp: (user) => ({
-    type: Actions.SIGNUP,
-    payload: user
-  }),
-  signOut: () => ({
-    type: Actions.SIGNOUT,
-  })
-}
+export const signIn = (email, password) => ({
+  type: Actions.SIGNIN, payload: {
+    email, password
+  }
+})
+export const signInSuccess = (auth) => ({
+  type: Actions.SIGNIN_SUCCESS, payload: auth
+})
+export const signUp = (user) => ({
+  type: Actions.SIGNUP, payload: user
+})
+export const signOut = () => ({
+  type: Actions.SIGNOUT,
+})

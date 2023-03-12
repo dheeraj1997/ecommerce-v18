@@ -1,18 +1,19 @@
-import {createBrowserHistory} from 'history';
 import React from 'react';
-import {createBrowserRouter, RouterProvider} from 'react-router-dom';
+import {Router, Route, Switch} from 'react-router-dom';
 import * as ROUTES from "../constants/routes";
 import ErrorPage from "./ErrorPage";
 import {default as Homepage} from "../containers/Home";
+import Navigation from "../components/common/Navigation";
+import {createBrowserHistory} from "history";
 
-const router = createBrowserRouter([
-  {
-    path: ROUTES.HOME,
-    element: <Homepage/>,
-    errorElement: <ErrorPage/>
-  }
-])
+export const history = createBrowserHistory();
 
 export const AppRouter = () => (
-  <RouterProvider router={router}/>
+  <Router history={history}>
+    <Navigation />
+    <Switch>
+      <Route path={ROUTES.HOME} component={Homepage}></Route>
+      <Route path="*" element={ErrorPage}></Route>
+    </Switch>
+  </Router>
 )

@@ -23,3 +23,10 @@ export const SET_LAST_REF_KEY = 'SET_LAST_REF_KEY';
 export const LOADING = 'LOADING';
 export const IS_AUTHENTICATING = 'IS_AUTHENTICATING';
 export const SET_REQUEST_STATUS = 'SET_REQUEST_STATUS';
+
+export const SET_CART_ITEMS = 'SET_CART_ITEMS';
+export const ADD_TO_CART = 'ADD_TO_CART';
+export const REMOVE_FROM_CART = 'REMOVE_FROM_CART';
+export const CLEAR_CART = 'CLEAR_CART';
+export const ADD_QTY_ITEM = 'ADD_QTY_ITEM';
+export const MINUS_QTY_ITEM = 'MINUS_QTY_ITEM';
