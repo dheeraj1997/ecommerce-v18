@@ -9,7 +9,7 @@ import SignUp from "../containers/Auth/signup";
 import SignIn from "../containers/Auth/signin";
 import CheckoutStep1 from "../containers/Checkout/step1"
 import PublicRoute from "./PublicRoute";
-import Cart from "../components/cart/cart";
+import {Cart} from "../components/cart";
 import ClientRoute from "./ClientRoute";
 
 export const history = createBrowserHistory();

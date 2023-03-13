@@ -6,7 +6,7 @@ import {
   Link, NavLink, useLocation
 } from 'react-router-dom';
 import UserAvatar from '../../containers/Account/components/UserAvatar';
-import CartToggle from '../cart/CartToggle';
+import { CartToggle } from '../cart';
 import Badge from './Badge';
 import logo from '../../../static/cart.png'
 import SearchBar from "./SearchBar";
