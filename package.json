@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "author": "Dheeraj Varshney",
   "private": true,
+  "homepage": "https://dheeraj1997.github.io/ecommerce-v18",
   "engines": {
     "node": "14.21.3"
   },
@@ -12,6 +13,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
+    "predeploy": "yarn build",
     "deploy": "gh-pages -d dist"
   },
   "eslintConfig": {
