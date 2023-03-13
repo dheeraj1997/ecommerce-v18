@@ -1,6 +1,6 @@
 import { CartItem, CartToggle } from '../cart';
 import { Boundary, Modal } from '../../components/common';
-import { CHECKOUT_STEP_1 } from '../../constants/routes';
+import {CHECKOUT_STEP_1, SIGNIN} from '../../constants/routes';
 import { calculateTotal, displayMoney } from '../../helpers/utils';
 import { useDidMount, useModal } from '../../hooks';
 import React, { useEffect } from 'react';
@@ -44,7 +44,7 @@ const Cart = () => {
   const onSignInClick = () => {
     onCloseModal();
     document.body.classList.remove('cart-open');
-    history.push(CHECKOUT_STEP_1);
+    history.push(SIGNIN);
   };
 
   const onClearCart = () => {

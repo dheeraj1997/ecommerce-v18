@@ -23,8 +23,8 @@ export const AppRouter = () => (
         <Route path={ROUTES.HOME} component={Homepage} exact />
         <PublicRoute path={ROUTES.SIGNUP} component={SignUp} exact />
         <PublicRoute path={ROUTES.SIGNIN} exact component={SignIn} />
-        <Route path="*" element={ErrorRoute} />
-        <ClientRoute path={ROUTES.CHECKOUT_STEP_1} component={CheckoutStep1} />
+        <ClientRoute path={ROUTES.CHECKOUT_STEP_1} exact component={CheckoutStep1} />
+        <PublicRoute element={ErrorRoute} />
       </Switch>
     </>
   </Router>

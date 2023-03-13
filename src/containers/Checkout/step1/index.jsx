@@ -7,7 +7,6 @@ import PropType from 'prop-types';
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { StepTracker } from '../components';
 import withCheckout from '../hoc/withCheckout';
 
 const OrderSummary = ({ cart, subtotal }) => {
@@ -20,7 +19,6 @@ const OrderSummary = ({ cart, subtotal }) => {
 
   return (
     <div className="checkout">
-      <StepTracker current={1} />
       <div className="checkout-step-1">
         <h3 className="text-center">Order Summary</h3>
         <span className="d-block text-center">Review items in your cart.</span>
