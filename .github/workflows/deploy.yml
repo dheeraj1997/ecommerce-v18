@@ -19,9 +19,9 @@ jobs:
         with:
           node-version: 14.21.3
       - name: Setup wasm
-          run:|
-            curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
-            sh ./init-wasm.sh
+        run: |
+          curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
+          sh ./init-wasm.sh
 
       - name: Install dependencies
         uses: borales/actions-yarn@v4
