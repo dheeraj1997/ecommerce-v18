@@ -26,7 +26,8 @@ jobs:
 
       - name: Build project
         uses: borales/actions-yarn@v4
-        run: build
+        with:
+          cmd: build:prod # will run `yarn build` command
 
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v2
