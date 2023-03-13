@@ -24,7 +24,7 @@ export const AppRouter = () => (
         <PublicRoute path={ROUTES.SIGNUP} component={SignUp} exact />
         <PublicRoute path={ROUTES.SIGNIN} exact component={SignIn} />
         <ClientRoute path={ROUTES.CHECKOUT_STEP_1} exact component={CheckoutStep1} />
-        <PublicRoute element={ErrorRoute} />
+        <PublicRoute component={ErrorRoute} />
       </Switch>
     </>
   </Router>

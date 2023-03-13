@@ -1,16 +1,29 @@
-import {useLocation} from "react-router-dom";
+import { useScrollTop } from '../hooks';
+import PropType from 'prop-types';
+import React from 'react';
 
-export default function ErrorRoute() {
-  const location = useLocation()
-  console.error("error at", location);
+const PageNotFound = ({ history }) => {
+  useScrollTop();
 
   return (
-    <div id="error-page">
-      <h1>Oops!</h1>
-      <p>Sorry, an unexpected error has occurred.</p>
-      <p>
-        <i>{location.pathname}</i>
-      </p>
+    <div className="page-not-found">
+      <h1>:( Page you are looking for doesn&apos;t exists.</h1>
+      <br />
+      <button
+        className="button"
+        onClick={history.goBack}
+        type="button"
+      >
+        Go back
+      </button>
     </div>
   );
-}
+};
+
+PageNotFound.propTypes = {
+  history: PropType.shape({
+    goBack: PropType.func
+  }).isRequired
+};
+
+export default PageNotFound;
