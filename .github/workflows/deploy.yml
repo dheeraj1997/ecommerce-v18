@@ -18,10 +18,16 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 14.21.3
-      - name: Setup wasm
-        run: |
-          curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
-          sh ./init-wasm.sh
+
+      # Install wasm-pack
+      - name: Install wasm
+        uses: jetli/wasm-pack-action@v0.3.0
+        with:
+          # Optional version of wasm-pack to install(eg. 'v0.9.1', 'latest')
+          version: v0.9.1
+
+      - name: Install rsw
+        run: cargo install rsw
 
       - name: Install dependencies
         uses: borales/actions-yarn@v4
