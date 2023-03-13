@@ -1,7 +1,7 @@
 import { ArrowRightOutlined, ShopOutlined } from '@ant-design/icons';
 import { CartItem } from '../../../components/cart';
 import { CHECKOUT_STEP_2 } from '../../../constants/routes';
-import { displayMoney } from '../../../helpers/utils';
+import {displayActionMessage, displayMoney} from '../../../helpers/utils';
 import { useDocumentTitle, useScrollTop } from '../../../hooks';
 import PropType from 'prop-types';
 import React from 'react';
@@ -15,7 +15,9 @@ const OrderSummary = ({ cart, subtotal }) => {
   const dispatch = useDispatch();
   const history = useHistory();
   const onClickPrevious = () => history.push('/');
-  const onClickNext = () => history.push(CHECKOUT_STEP_2);
+  const onPlaceOrder = () => {
+    displayActionMessage('Feature not ready yet :)', 'info');
+  }
 
   return (
     <div className="checkout">
@@ -51,10 +53,10 @@ const OrderSummary = ({ cart, subtotal }) => {
           </button>
           <button
             className="button"
-            onClick={onClickNext}
+            onClick={onPlaceOrder}
             type="submit"
           >
-            Next Step
+            Place Order
             &nbsp;
             <ArrowRightOutlined />
           </button>
