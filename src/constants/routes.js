@@ -1,11 +1,11 @@
-export const HOME = '/';
-export const SHOP = '/shop';
-export const SIGNIN = '/signin';
-export const SIGNOUT = '/signout';
-export const SIGNUP = '/signup';
-export const FORGOT_PASSWORD = '/forgot_password';
-export const CHECKOUT_STEP_1 = '/checkout/step1';
-export const CHECKOUT_STEP_2 = '/checkout/step2';
-export const CHECKOUT_STEP_3 = '/checkout/step3';
-export const ACCOUNT = '/account';
-
+export const BASE_PATH = '/ecommerce-v18'
+export const HOME = BASE_PATH + '/';
+export const SHOP = BASE_PATH + '/shop';
+export const SIGNIN = BASE_PATH + '/signin';
+export const SIGNOUT = BASE_PATH + '/signout';
+export const SIGNUP = BASE_PATH + '/signup';
+export const FORGOT_PASSWORD = BASE_PATH + '/forgot_password';
+export const CHECKOUT_STEP_1 = BASE_PATH + '/checkout/step1';
+export const CHECKOUT_STEP_2 = BASE_PATH + '/checkout/step2';
+export const CHECKOUT_STEP_3 = BASE_PATH + '/checkout/step3';
+export const ACCOUNT = BASE_PATH + '/account';

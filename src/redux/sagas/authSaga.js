@@ -17,8 +17,8 @@ import {setAuthenticating, setAuthStatus} from "../actions/miscActions";
 import {clearProfile, setProfile} from "../actions/profileActions";
 import {signInSuccess, signOutSuccess} from "../actions/authActions";
 import {resetCheckout} from "../actions/checkoutActions";
-import defaultAvatar from '../../../static/defaultAvatar.jpg';
-import defaultBanner from '../../../static/defaultBanner.jpg';
+import defaultAvatar from '../../../public/defaultAvatar.jpg';
+import defaultBanner from '../../../public/defaultBanner.jpg';
 
 function* handleError(e) {
   const obj = { success: false, type: 'auth', isError: true };

@@ -8,8 +8,9 @@ import {
 import UserAvatar from '../../containers/Account/components/UserAvatar';
 import { CartToggle } from '../cart';
 import Badge from './Badge';
-import logo from '../../../static/cart.png'
+import logo from '../../../public/cart.png'
 import SearchBar from "./SearchBar";
+import {HOME} from "../../constants/routes";
 
 const Navigation = () => {
   const navbar = useRef(null);
@@ -58,7 +59,7 @@ const Navigation = () => {
   return (
     <nav className="navigation" ref={navbar}>
       <div className="logo">
-        <Link onClick={onClickLink} to="/"><img alt="Logo" src={logo} /></Link>
+        <Link onClick={onClickLink} to={HOME}><img alt="Logo" src={logo} /></Link>
       </div>
       <ul className="navigation-menu-main">
         <li><NavLink activeClassName="navigation-menu-active" exact to={ROUTE.HOME}>Home</NavLink></li>
